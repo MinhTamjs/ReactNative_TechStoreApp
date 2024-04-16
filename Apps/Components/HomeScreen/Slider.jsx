@@ -1,25 +1,12 @@
 import { View, Text, Dimensions, FlatList, Image } from "react-native";
 import React, { useRef, useState, useEffect } from "react";
+import sliderImageData from "../../Database/SliderBanners";
 
 export default function Slider() {
   const sliderRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
   const screenWidth = Dimensions.get("window").width;
-  //Data for slider images
-  const sliderImageData = [
-    {
-      id: "1",
-      image: require("./../../../assets/images/banners/slider_1.png"),
-    },
-    {
-      id: "2",
-      image: require("./../../../assets/images/banners/slider_2.png"),
-    },
-    {
-      id: "3",
-      image: require("./../../../assets/images/banners/slider_3.png"),
-    },
-  ];
+  
   //Auto Slide effect
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,8 +31,8 @@ export default function Slider() {
         style={{
           width: screenWidth - 48,
           height: 200,
-          paddingLeft: 20,
-          paddingRight: 20,
+          paddingLeft: 10,
+          paddingRight: 10,
         }}
       >
         <Image
@@ -57,6 +44,7 @@ export default function Slider() {
     );
   };
   return (
+    // View image for slider
     <View className="mt-3">
       <FlatList
         ref={sliderRef}
