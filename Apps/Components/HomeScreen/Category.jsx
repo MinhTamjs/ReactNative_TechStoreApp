@@ -18,16 +18,17 @@ export default function Category() {
       {/* Products Image display */}
       <View className="flex-1 mt-2 flex-row">
         <FlatList
-          data={productImagesData}
+          data={productImagesData} // Data here
           numColumns={2}
           columnWrapperStyle={{ gap: 10, paddingHorizontal: 12 }}
           contentContainerStyle={{ gap: 10, paddingBottom: 20 }}
-          keyExtractor={(item, index) => item.id}
+          keyExtractor={(item) => item.id} // Take the data
           renderItem={({ item, index }) => {
             return (
               <Animated.View entering={FadeInDown.delay(5*index).easing(Easing.ease)}>
                 <TouchableOpacity className="justify-center mr-2" onPress={() => navigation.navigate("Detail",{item})}>
-                  <Image
+                  <Animated.Image
+                    sharedTransitionTag={item.name}
                     source={item.image}
                     className="w-[150px] h-[150px] rounded-md items-center"
                   />
