@@ -1,9 +1,4 @@
-import {
-  View,
-  Image,
-  StyleSheet,
-  Pressable,
-} from "react-native";
+import { View, Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 export default function HeaderComponent() {
@@ -38,5 +33,6 @@ const style = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 20,
+    
   },
 });

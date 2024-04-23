@@ -6,6 +6,7 @@ import {
   useWindowDimensions,
   StyleSheet,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import HeaderComponent from "../../Components/DetailScreen/Header";
 import Animated from "react-native-reanimated";
@@ -15,35 +16,47 @@ function Detail({ route }) {
   const { width } = useWindowDimensions();
 
   return (
-    <View style={styles.container}>
+    <View className="bg-white flex-1">
       <HeaderComponent />
-      <View style={styles.imageContainer}>
-        <Animated.Image
-          sharedTransitionTag={item.name}
-          source={item.image}
-          style={[styles.image, { width: width, height: width }]}
-        />
-        <Text style={styles.productName}>{item.name}</Text>
-      </View>
-      <View style={styles.infoSection}>
-        <Text style={styles.description}>
-          <Text>✅ Xem thêm Gear Tại đây 💰 Trả góp Tại đây</Text>
-          <Text>🎁TĂNG Ram GEIL Super Luce Black RGB 8GB</Text>
-          <Text>
-            | DDR4 | 3200MHz Tại đây Giá sản phẩm có thể thay đổi theo từng thời
-            điểm.
+      {/* Products info */}
+      <Image source={item.image} style={{ width: width, height: width }} />
+      {/* Description */}
+      <View
+        style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
+        className="px-5 flex flex-1 justify-between bg-white pt-8 -mt-10"
+      >
+        <ScrollView showsVerticalScrollIndicator={false} className="space-y-5">
+          <View className="flex-cl justify-between items-start gap-2">
+            <Text
+              className="font-bold text-neutral-700"
+              style={{ fontSize: 30 }}
+            >
+              {item.name}
+            </Text>
+            <Text
+              className="font-bold text-orange-400"
+              style={{ fontSize: 30 }}
+            >
+              {item.price}
+            </Text>
+          </View>
+          <Text style={{ fontSize: 15 }}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
           </Text>
-          <Text>
-            KM MÁY BỘ STAR ĐẾN 31/12/2024 Không thay đổi linh kiện để được áp
-            dụng khuyến mãi
-          </Text>
-          <Text>✅ không áp dụng chung Khuyến mãi khác Tại đây .</Text>
-        </Text>
-      </View>
-      <View style={styles.bottomSection}>
-        <Text style={styles.price}>{item.price}</Text>
-        <TouchableOpacity style={styles.addButton}>
-          <Text style={styles.addButtonText}>Add to cart</Text>
+        </ScrollView>
+        <TouchableOpacity
+          style={{ backgroundColor: "#e45d5d", height: 50, width: 300}}
+          className="mb-6 mx-auto flex justify-center items-center rounded-full"
+        >
+          <Text className="text-white font-bold" style={{fontSize: 20}}>Add to cart</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -51,63 +64,3 @@ function Detail({ route }) {
 }
 
 export default Detail;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-  },
-  imageContainer: {
-    position: "relative",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  image: {
-    width: "100%",
-    height: undefined,
-    aspectRatio: 1,
-  },
-  productName: {
-    position: "absolute",
-    bottom: 10,
-    left: 10,
-    color: "white",
-    fontSize: 24,
-    fontWeight: "bold",
-    backgroundColor: "rgba(0,0,0,0.5)",
-    padding: 8,
-    borderRadius: 5,
-  },
-  infoSection: {
-    flex: 1,
-    padding: 20,
-  },
-  description: {
-    fontSize: 18,
-    marginBottom: 20,
-  },
-  bottomSection: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 20,
-  },
-  price: {
-    fontSize: 28,
-    fontWeight: "500",
-    color: "#e45d5d",
-  },
-  addButton: {
-    backgroundColor: "red",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
-    elevation: 3,
-  },
-  addButtonText: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-});

@@ -13,7 +13,7 @@ export default function HomeDrawerNavigation() {
       <Drawer.Screen
         name="HomePage"
         options={{
-          headerShown: true,
+          headerShown: false,
           headerStyle: { height: 50 },
           headerTitle: "",
           drawerLabel: "Home",

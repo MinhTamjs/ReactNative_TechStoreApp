@@ -6,7 +6,7 @@ export default function HeaderComponent() {
   return (
     <View>
       {/* User Info */}
-      <View className="flex flex-row items-center gap-2">
+      <View className="flex flex-row items-center gap-2 mt-2">
         <Image
           source={require("./../../../assets/images/banners/banner_login.png")}
           className="rounded-full w-12 h-12"
