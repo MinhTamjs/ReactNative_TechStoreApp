@@ -18,14 +18,14 @@ export default function IntroScreen() {
             className="p-4 bg-blue-500 rounded-full elevation"
           >
             <Text className="text-white text-center text-[20px] font-bold">
-              Sign in
+              Đăng ký
             </Text>
           </TouchableOpacity>
         </View>
         <View className="p-8 bg-white flex-row justify-center">
-          <Text className="text-black font-semibold">Already SignUp? </Text>
+          <Text className="text-black font-semibold">Đã có tài khoản? </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-            <Text className="text-black text-center">Login</Text>
+            <Text className="text-black text-center">Đăng nhập</Text>
           </TouchableOpacity>
         </View>
       </View>

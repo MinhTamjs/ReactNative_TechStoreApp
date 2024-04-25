@@ -2,9 +2,11 @@ import { View, Text } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
+import BottomTabNavigation from "./BottomTabNavigation";
 import HomeScreen from "../Screens/MainScreen/HomeScreen";
 import GamingScreen from "../Screens/MainScreen/Category/GamingScreen";
 import OfficeScreen from "../Screens/MainScreen/Category/OfficeScreen";
+import LaptopScreen from "../Screens/MainScreen/Category/LaptopScreen";
 
 export default function HomeDrawerNavigation() {
   const Drawer = createDrawerNavigator();
@@ -18,7 +20,7 @@ export default function HomeDrawerNavigation() {
           headerTitle: "",
           drawerLabel: "Home",
         }}
-        component={HomeScreen}
+        component={BottomTabNavigation}
       />
       <Drawer.Screen
         name="PCVP"
@@ -39,6 +41,16 @@ export default function HomeDrawerNavigation() {
           drawerLabel: "PC Gaming",
         }}
         component={GamingScreen}
+      />
+      <Drawer.Screen
+        name="Lap"
+        options={{
+          headerShown: true,
+          headerStyle: { height: 50 },
+          headerTitle: "",
+          drawerLabel: "Laptop",
+        }}
+        component={LaptopScreen}
       />
     </Drawer.Navigator>
   );

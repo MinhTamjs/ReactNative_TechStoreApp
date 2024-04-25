@@ -19,7 +19,7 @@ function Detail({ route }) {
     <View className="bg-white flex-1">
       <HeaderComponent />
       {/* Products info */}
-      <Image source={item.image} style={{ width: width, height: width }} />
+      <Animated.Image source={item.image} style={{ width: width, height: width }} sharedTransitionTag="sharedTag" />
       {/* Description */}
       <View
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}

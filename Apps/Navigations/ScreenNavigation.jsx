@@ -16,11 +16,32 @@ export default function ScreenNavigation() {
     // ScreenNavigation
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Intro">
-        <Stack.Screen name="Intro" options = {{headerShown: false}} component={IntroScreen} />
-        <Stack.Screen name="Login" options={{headerShown: true}} component={LoginScreen} />
-        <Stack.Screen name="Sign Up" options={{headerShown: true}} component={SignUpScreen} />
-        <Stack.Screen name="Home" options={{headerShown: false, animation: 'fade'}} component={HomeDrawerNavigation} />
-        <Stack.Screen name="Detail" options={{headerShown: false, animation: 'fade'}} component={DetailScreen} />
+        <Stack.Screen
+          name="Intro"
+          options={{ headerShown: false }}
+          component={IntroScreen}
+        />
+        <Stack.Screen
+          name="Login"
+          options={{ headerShown: true }}
+          component={LoginScreen}
+        />
+        <Stack.Screen
+          name="Sign Up"
+          options={{ headerShown: true }}
+          component={SignUpScreen}
+        />
+        <Stack.Screen
+          name="Home"
+          options={{ headerShown: false, animation: "fade" }}
+          component={HomeDrawerNavigation}
+        />
+        {/* <Stack.Screen name="Home" options={{headerShown: false, animation: 'fade'}} component={HomeScreen} /> */}
+        <Stack.Screen
+          name="Detail"
+          options={{ headerShown: false, animation: "fade" }}
+          component={DetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import OfficeCategory from '../../../Components/HomeScreen/OfficeCategory'
+import LaptopCategory from '../../../Components/HomeScreen/LaptopCategory'
 
-export default function OfficeScreen() {
+
+export default function LaptopScreen() {
   return (
     <View className="py-8 px-6 flex-1 bg-white">
-      <OfficeCategory/>
+      <LaptopCategory/>
     </View>
   )
 }
