@@ -7,11 +7,42 @@ import HomeScreen from "../Screens/MainScreen/HomeScreen";
 import GamingScreen from "../Screens/MainScreen/Category/GamingScreen";
 import OfficeScreen from "../Screens/MainScreen/Category/OfficeScreen";
 import LaptopScreen from "../Screens/MainScreen/Category/LaptopScreen";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function HomeDrawerNavigation() {
   const Drawer = createDrawerNavigator();
+  const drawerIcon = ({ focused, size }, name) => {
+    return (
+      <Icon
+        name={name}
+        size={size}
+        color={focused ? Colors.active : Colors.inactive}
+      />
+    );
+  };
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+      screenOptions={{
+        drawerType: "slide",
+        drawerActiveBackgroundColor: Colors.active,
+        drawerInactiveBackgroundColor: Colors.transparent,
+        drawerActiveTintColor: Colors.textActive,
+        drawerInactiveTintColor: Colors.inactive,
+        overlayColor: Colors.transparent,
+        drawerStyle: {
+          backgroundColor: Colors.bg,
+          width: '45%',
+          paddingTop: 20,
+        },
+        drawerLabelStyle: {
+          fontWeight: "bold",
+          fontSize: 15,
+        },
+        sceneContainerStyle: {
+          backgroundColor: Colors.bg,
+        },
+      }}
+    >
       <Drawer.Screen
         name="HomePage"
         options={{
@@ -25,7 +56,7 @@ export default function HomeDrawerNavigation() {
       <Drawer.Screen
         name="PCVP"
         options={{
-          headerShown: true,
+          headerShown: false,
           headerStyle: { height: 50 },
           headerTitle: "",
           drawerLabel: "PC Văn phòng",
@@ -35,7 +66,7 @@ export default function HomeDrawerNavigation() {
       <Drawer.Screen
         name="PCGM"
         options={{
-          headerShown: true,
+          headerShown: false,
           headerStyle: { height: 50 },
           headerTitle: "",
           drawerLabel: "PC Gaming",
@@ -45,7 +76,7 @@ export default function HomeDrawerNavigation() {
       <Drawer.Screen
         name="Lap"
         options={{
-          headerShown: true,
+          headerShown: false,
           headerStyle: { height: 50 },
           headerTitle: "",
           drawerLabel: "Laptop",
@@ -55,3 +86,11 @@ export default function HomeDrawerNavigation() {
     </Drawer.Navigator>
   );
 }
+
+const Colors = {
+  bg: "#F98619",
+  active: "#FFDEC0",
+  inactive: "#eee",
+  textActive: "#834304",
+  transparent: "transparent",
+};

@@ -15,7 +15,9 @@ export default function ScreenNavigation() {
   return (
     // ScreenNavigation
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Intro">
+      <Stack.Navigator
+        initialRouteName="Intro"
+      >
         <Stack.Screen
           name="Intro"
           options={{ headerShown: false }}

@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function IntroScreen() {
   const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-white">
       <View>
         <Image
           source={require("./../../../assets/images/banners/banner_login.png")}

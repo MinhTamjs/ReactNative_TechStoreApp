@@ -6,6 +6,7 @@ import CartScreen from "../Screens/MainScreen/CartScreen";
 import UserScreen from "../Screens/MainScreen/UserScreen";
 import { AntDesign } from "@expo/vector-icons";
 
+
 export default function BottomTabNavigation() {
   const screenWidth = Dimensions.get("window").width;
   const tabBarWidth = 300; // Chiều rộng của thanh tab
@@ -27,7 +28,7 @@ export default function BottomTabNavigation() {
           right: tabBarMarginHorizontal,
           borderRadius: 50,
           backgroundColor: "#F94848",
-          borderTopWidth: 1,
+          borderTopWidth: 0,
           elevation: 10,
         },
         tabBarLabelStyle: {

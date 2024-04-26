@@ -3,6 +3,7 @@ import React from "react";
 import Animated, { FadeIn, FadeInDown, Easing } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
 import productGamingImagesData from "../../Database/GamingProducts";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function GamingCategory() {
   const navigation = useNavigation();
@@ -13,6 +14,12 @@ export default function GamingCategory() {
         <View className="bg-red-500 rounded-l-xl rounded-tr-3xl justify-center px-3 py-1">
           <Text className="text-white font-bold text-lg">PC Gaming</Text>
         </View>
+        <TouchableOpacity
+          className="justify-center ml-3"
+          onPress={() => navigation.openDrawer()}
+        >
+          <FontAwesome name="exchange" size={15} color="black" />
+        </TouchableOpacity>
         <View className="bg-white justify-center px-3 py-1"></View>
       </View>
       {/* Products Image display */}
