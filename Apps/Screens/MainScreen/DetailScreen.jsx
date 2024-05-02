@@ -19,7 +19,11 @@ function Detail({ route }) {
     <View className="bg-white flex-1">
       <HeaderComponent />
       {/* Products info */}
-      <Animated.Image source={item.image} style={{ width: width, height: width }} sharedTransitionTag="sharedTag" />
+      <Animated.Image
+        source={item.image}
+        style={{ width: width, height: width }}
+        sharedTransitionTag="sharedTag"
+      />
       {/* Description */}
       <View
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
@@ -41,22 +45,23 @@ function Detail({ route }) {
             </Text>
           </View>
           <Text style={{ fontSize: 15 }}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            MAINBOARD Mainboard Asus Prime H510M-K R2.0 | Socket 1200, M-ATX, 2
+            khe ram CPU CPU Intel Core i3 10105F | TRAY, KHÔNG FAN RAM Ram GEIL
+            Super Luce Black RGB 8GB, DDR4, 3200MHz SSD Ổ Cứng SSD 256G Patriot
+            P300 | PCIe Gen3, M.2 NVMe VGA VGA PNY GTX 1650 4GB DUAL GDDR6 2 Fan
+            PSU Nguồn Centaur 450W 80 Plus CASE Thùng máy Case Magic MIX-Tower
+            Đen | M-ATX, không fan Tản Nhiệt Tản nhiệt khí CPU Leopard KF400 Led
+            RGB - Đen FAN CASE Fan Case Redmoon F3 - Đen | Kit 5 Fan Led RGB,
+            kèm sẵn HUB và Remote
           </Text>
         </ScrollView>
         <TouchableOpacity
-          style={{ backgroundColor: "#e45d5d", height: 50, width: 300}}
+          style={{ backgroundColor: "#e45d5d", height: 50, width: 300 }}
           className="mb-6 mx-auto flex justify-center items-center rounded-full"
         >
-          <Text className="text-white font-bold" style={{fontSize: 20}}>Add to cart</Text>
+          <Text className="text-white font-bold" style={{ fontSize: 20 }}>
+            Add to cart
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
